@@ -1,0 +1,156 @@
+// Variables
+$primary: #2563eb;
+$primary-dark: #1d4ed8;
+$background-dark: #0a0a0a;
+$card-bg-dark: #171717;
+$text-dark: #f5f5f5;
+$text-secondary-dark: #a3a3a3;
+
+$background-light: #f5f5f5;
+$card-bg-light: #ffffff;
+$text-light: #171717;
+$text-secondary-light: #525252;
+
+$border-radius: 8px;
+$transition: 0.2s ease;
+
+// Base styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background-color $transition;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.theme-toggle {
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color $transition;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.joke-card {
+    background-color: var(--card-bg);
+    border-radius: $border-radius;
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .joke-content {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .joke-text {
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+    }
+
+    .joke-button {
+        background-color: var(--primary);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: $border-radius;
+        font-weight: 500;
+        transition: background-color $transition, transform 0.1s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        &:hover {
+            background-color: var(--primary-dark);
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}
+
+.notification {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: $primary;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: $border-radius;
+    transform: translateX(150%);
+    transition: transform $transition;
+    z-index: 1000;
+
+    &.show {
+        transform: translateX(0);
+    }
+}
+
+// Theme variables
+:root {
+    --primary: #{$primary};
+    --primary-dark: #{$primary-dark};
+    --background: #{$background-dark};
+    --card-bg: #{$card-bg-dark};
+    --text: #{$text-dark};
+    --text-secondary: #{$text-secondary-dark};
+}
+
+[data-theme="light"] {
+    --primary: #{$primary};
+    --primary-dark: #{$primary-dark};
+    --background: #{$background-light};
+    --card-bg: #{$card-bg-light};
+    --text: #{$text-light};
+    --text-secondary: #{$text-secondary-light};
+}
