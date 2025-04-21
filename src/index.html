@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#121212">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Joke Generator</h1>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main class="joke-card">
+            <div class="joke-content">
+                <p class="joke-text" id="jokeText">Loading joke...</p>
+            </div>
+            <button class="joke-button" id="jokeButton">
+                <i class="fas fa-arrows-rotate"></i> Get New Joke
+            </button>
+        </main>
+
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
